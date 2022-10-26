@@ -6,50 +6,81 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="header">
-    <div class="container">
-        <nav>
-            <img src="images/logo.png" alt="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-text">
-            <p>Software Developer</p>
-            <h1>Welcome, I'm <span>Rogelio</span><br>Lozano from San Antonio</h1>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Welcome, I'm <span>Rogelio</span><br>Lozano from San Antonio</h1>
+            </div>
         </div>
     </div>
-</div>
 <!--About Section-->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="images/user.png" alt="user">
-            </div>
-            <div class="about-col-2">
-                <h1 class="about-title">About Me</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dolorum eligendi enim exercitationem iusto, nobis nostrum repudiandae voluptas? Accusamus autem dolor exercitationem facere id ipsam mollitia nam sint voluptate?</p>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.png" alt="user">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="about-title">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dolorum eligendi enim exercitationem iusto, nobis nostrum repudiandae voluptas? Accusamus autem dolor exercitationem facere id ipsam mollitia nam sint voluptate?</p>
 
-                <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
-                </div>
-                <div class="tab-contents">
-                    <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
-                        <li><span>Web Development</span><br>Web App Development</li>
-                        <li><span>App Development</span><br>Building Android/iOS Apps</li>
-                    </ul>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS Apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>CodeUp Bootcamp Training</li>
+                            <li><span>2022 - Current</span><br>CodeUp Bootcamp Training </li>
+                            <li><span>2022 - Current</span><br>CodeUp Bootcamp Training</li>
+                            <li><span>2022 - Current</span><br>CodeUp Bootcamp Training</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022</span><br>CodeUp Bootcamp Training</li>
+                            <li><span>2022</span><br>CodeUp Bootcamp Training</li>
+                            <li><span>2022</span><br>CodeUp Bootcamp Training</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
-</div>
 
+    <script>
+        let tabLinks = document.getElementsByClassName("tab-links")
+        let tabContents = document.getElementsByClassName("tab-contents")
+
+        function openTab(tabName) {
+            for(tabLink of tabLinks) {
+                tabLink.classList.remove('active-link')
+            }
+            for(tabContent of tabContents) {
+                tabContent.classList.remove('active-tab')
+            }
+            event.currentTarget.classList.add('active-link')
+            document.getElementById(tabName).classList.add('active-tab')
+        }
+    </script>
 </body>
 </html>
