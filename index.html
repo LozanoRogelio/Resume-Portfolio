@@ -11,13 +11,15 @@
         <div class="container">
             <nav>
                 <img src="images/logo.png" alt="logo">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li><a href="#">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <p>Software Developer</p>
@@ -33,7 +35,7 @@
                     <img src="images/user.png" alt="user">
                 </div>
                 <div class="about-col-2">
-                    <h1 class="about-title">About Me</h1>
+                    <h1 class="sub-title">About Me</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet commodi dolorum eligendi enim exercitationem iusto, nobis nostrum repudiandae voluptas? Accusamus autem dolor exercitationem facere id ipsam mollitia nam sint voluptate?</p>
 
                     <div class="tab-titles">
@@ -70,7 +72,7 @@
 <!--    Services Section-->
     <div id="services">
         <div class="container">
-            <h1 class="services-title">My Services</h1>
+            <h1 class="sub-title">My Services</h1>
             <div class="services-list">
                 <div>
                     <i class="fa-solid fa-code"></i>
@@ -96,7 +98,7 @@
 <!--    Portfolio Section Jackpot-->
     <div id="portfolio">
         <div class="container">
-            <h1 class="portfolio-title">Portfolio</h1>
+            <h1 class="sub-title">Portfolio</h1>
             <div class="work-list">
                 <div class="work">
                     <img src="images/work-1.png" alt="project">
@@ -132,7 +134,7 @@
         <div class="container">
             <div class="row">
                 <div class="contact-left">
-                    <h1 class="contact-title">Contact Me</h1>
+                    <h1 class="sub-title">Contact Me</h1>
                     <p><i class="fa-sharp fa-solid fa-paper-plane"></i> lozano.rogelio92@gmail.com</p>
                     <p><i class="fa-solid fa-mobile-screen-button"></i> 956-844-7700</p>
                     <div class="social-icons">
@@ -170,6 +172,17 @@
             }
             event.currentTarget.classList.add('active-link')
             document.getElementById(tabName).classList.add('active-tab')
+        }
+    </script>
+
+    <script>
+        let sidemenu = document.getElementById("sidemenu")
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
         }
     </script>
 </body>
